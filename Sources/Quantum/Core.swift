@@ -1,6 +1,6 @@
 //
 //  Core.swift
-//  Reactor
+//  Quantum
 //
 //  Created by Matthew McArthur on 10/18/19.
 //  Copyright © 2019 McArthur Labs. All rights reserved.
@@ -8,13 +8,13 @@
 
 import Foundation
 import PureStateMachine
-import MessageRouter
+import Combine
 
 public final class Core<State, Event, Command> {
 
     public typealias CommandProcessor = (Core<State, Event, Command>, Command) -> Void
 
-    public let stateChanged = MessageRouter<State>()
+    public let stateChanged: CurrentValueSubject<State, Never>
 
     public var currentState: State {
         return stateMachine.currentState
@@ -30,10 +30,10 @@ public final class Core<State, Event, Command> {
     ) {
         self.stateMachine = PureStateMachine<State, Event, Command>(
             initialState: initialState,
-            label: "com.mcarthurlabs.Core",
             eventHandler: eventHandler
         )
         self.commandProcessors = commandProcessors
+        self.stateChanged =  CurrentValueSubject(initialState)
     }
 
     

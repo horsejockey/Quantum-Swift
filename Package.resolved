@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Actor",
+        "repositoryURL": "https://github.com/horsejockey/Actor-Swift",
+        "state": {
+          "branch": null,
+          "revision": "0ee214625c2e09a48c813da505c1faccc44300ab",
+          "version": "3.0.0"
+        }
+      },
+      {
+        "package": "MessageRouter",
+        "repositoryURL": "https://github.com/horsejockey/MessageRouter-iOS",
+        "state": {
+          "branch": null,
+          "revision": "a8878c104bf2d8a0b4cfea67ef1c145345167cb8",
+          "version": "2.0.0"
+        }
+      },
+      {
+        "package": "PureStateMachine",
+        "repositoryURL": "https://github.com/horsejockey/PureStateMachine-Swift",
+        "state": {
+          "branch": null,
+          "revision": "12c529a3f8e636f1e9a7b34407e93402c1121009",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

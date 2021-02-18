@@ -10,7 +10,7 @@ Quantum is a framework based on [Reactor](https://github.com/ReactorSwift/Reacto
 
 And many more.
 
-This iteration of the framework was originally created by [Rob Brown](https://github.com/rob-brown) and is based on his [PureStateMachine](https://github.com/horsejockey/PureStateMachine-Swift). 
+This iteration of the framework was originally created by [Rob Brown](https://github.com/rob-brown) [here](https://gist.github.com/rob-brown/0725f6609accd6348f2dc5bc883b1cd1) and is based on his [PureStateMachine](https://github.com/horsejockey/PureStateMachine-Swift). 
 
 The idea behind all of these frameworks is to have single source of truth for you application state that can only be mutated by pre-defined events or actions you can take against the current state. Quantum achieves this by adding a light wrapper around a state machine to formalize and extend some of it's functionality.
 

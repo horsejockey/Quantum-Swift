@@ -14,12 +14,15 @@ public final class Core<State, Event, Command> {
 
     public typealias CommandProcessor = (Core<State, Event, Command>, Command) -> Void
 
-    public let stateChanged: CurrentValueSubject<State, Never>
-
+    public var stateChanged: AnyPublisher<State, Never> {
+        _stateChanged.eraseToAnyPublisher()
+    }
     public var currentState: State {
         return stateMachine.currentState
     }
-
+    
+    private let _stateChanged: CurrentValueSubject<State, Never>
+    private let workQueue: DispatchQueue = DispatchQueue(label: "com.mcarthurlabs.Quantum", qos: .userInitiated, attributes: [], autoreleaseFrequency: .inherit, target: nil)
     private let stateMachine: PureStateMachine<State, Event, Command>
     private let commandProcessors: [CommandProcessor]
 
@@ -33,16 +36,16 @@ public final class Core<State, Event, Command> {
             eventHandler: eventHandler
         )
         self.commandProcessors = commandProcessors
-        self.stateChanged =  CurrentValueSubject(initialState)
+        self._stateChanged =  CurrentValueSubject(initialState)
     }
 
     
     public func fire(event: Event) {
-        DispatchQueue.global(qos: .default).async {
+        workQueue.async {
             let update = self.stateMachine.handleEvent(event)
 
             if let state = update.state {
-                self.stateChanged.send(state)
+                self._stateChanged.send(state)
             }
 
             for command in update.commands {

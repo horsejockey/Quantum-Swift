@@ -1,7 +1,7 @@
 import XCTest
 
-import ReactorTests
+import QuantumTests
 
 var tests = [XCTestCaseEntry]()
-tests += ReactorTests.allTests()
+tests += QuantumTests.allTests()
 XCTMain(tests)

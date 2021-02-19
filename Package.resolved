@@ -11,15 +11,6 @@
         }
       },
       {
-        "package": "MessageRouter",
-        "repositoryURL": "https://github.com/horsejockey/MessageRouter-iOS",
-        "state": {
-          "branch": null,
-          "revision": "a8878c104bf2d8a0b4cfea67ef1c145345167cb8",
-          "version": "2.0.0"
-        }
-      },
-      {
         "package": "PureStateMachine",
         "repositoryURL": "https://github.com/horsejockey/PureStateMachine-Swift",
         "state": {

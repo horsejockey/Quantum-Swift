@@ -4,30 +4,31 @@
 import PackageDescription
 
 let package = Package(
-    name: "Reactor",
+    name: "Quantum",
+    platforms: [
+        .macOS(.v10_15),
+        .iOS(.v13),
+        .tvOS(.v13),
+        .watchOS(.v6)
+    ],
     products: [
         .library(
-            name: "Reactor",
-            targets: ["Reactor"]),
+            name: "Quantum",
+            targets: ["Quantum"]),
     ],
     dependencies: [
          .package(
              name: "PureStateMachine",
              url: "https://github.com/horsejockey/PureStateMachine-Swift",
              from: "1.0.0"
-        ),
-         .package(
-             name: "MessageRouter",
-             url: "https://github.com/horsejockey/MessageRouter-iOS",
-             from: "2.0.0"
-        ),
+        )
     ],
     targets: [
         .target(
-            name: "Reactor",
-            dependencies: ["PureStateMachine", "MessageRouter"]),
+            name: "Quantum",
+            dependencies: ["PureStateMachine"]),
         .testTarget(
-            name: "ReactorTests",
-            dependencies: ["Reactor"]),
+            name: "QuantumTests",
+            dependencies: ["Quantum"]),
     ]
 )

@@ -46,7 +46,7 @@ The idea behind all of these frameworks is to have single source of truth for yo
 
 ```
 
-There are six objects in the Reactor architecture:
+There are five objects in the Reactor architecture:
 
 1. The `State` object - A struct with properties representing application data.
 1. The `Event` - Can trigger a state update.

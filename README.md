@@ -5,7 +5,7 @@
 Quantum is a framework based on [Reactor](https://github.com/ReactorSwift/Reactor/blob/master/README.md). They are both inspired by [Elm](https://github.com/evancz/elm-architecture-tutorial) and [Redux](http://redux.js.org/docs/basics/index.html) and there are several other similar projects for Swift based on these patterns.
 
 [ReSwift](https://github.com/ReSwift/ReSwift)
-[Swift Composable Architecture]https://github.com/pointfreeco/swift-composable-architecture
+[Swift Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture)
 [Loop](https://github.com/ReactiveCocoa/Loop)
 
 And many more.
